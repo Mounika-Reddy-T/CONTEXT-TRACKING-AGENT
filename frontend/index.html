@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Agent</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-panel">
+        <p class="eyebrow">Learning Agent</p>
+        <h1>Conversation Memory + Context Tracking</h1>
+        <p class="hero-copy">
+          This agent remembers the last 3 interactions in each session and shows
+          the context tags it is tracking in real time.
+        </p>
+        <div class="session-box">
+          <label for="sessionId">Session ID</label>
+          <input id="sessionId" type="text" value="demo-session" />
+          <button id="refreshSessionButton" type="button">Refresh Memory</button>
+        </div>
+        <div class="memory-panel">
+          <h2>Tracked Context</h2>
+          <div id="contextTags" class="tag-list"></div>
+          <h2>Recent Memory</h2>
+          <div id="memoryList" class="memory-list"></div>
+          <h2>Session Summary</h2>
+          <p id="sessionSummary" class="summary-text">No session activity yet.</p>
+        </div>
+      </section>
+
+      <section class="chat-panel">
+        <div id="chatMessages" class="chat-messages"></div>
+        <form id="chatForm" class="chat-form">
+          <label class="sr-only" for="messageInput">Message</label>
+          <textarea
+            id="messageInput"
+            rows="4"
+            placeholder="Ask something and the agent will remember the last 3 interactions..."
+          ></textarea>
+          <button id="sendButton" type="submit">Send Message</button>
+        </form>
+        <div id="guardrailNotes" class="guardrail-notes"></div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
